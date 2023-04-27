@@ -35,20 +35,29 @@ public class CoordenadasConsultaServiceImpl implements CoordenadasConsultaServic
 
             CoordenadasConsultaDTO coordenadasConsultaDTO = new CoordenadasConsultaDTO();
 
-            coordenadasConsultaDTO.setLinea((Integer) coordenadaAux[0]);
+            coordenadasConsultaDTO.setLinea((BigDecimal) coordenadaAux[0]);
             coordenadasConsultaDTO.setCapta_sec((BigDecimal)coordenadaAux[1]);
             coordenadasConsultaDTO.setVert_sec((BigDecimal)coordenadaAux[2]);
             coordenadasConsultaDTO.setSistema_coordenadas((BigDecimal) coordenadaAux[3]);
             coordenadasConsultaDTO.setNombre_sistema_coordenadas((String) coordenadaAux[4]);
             coordenadasConsultaDTO.setX((BigDecimal) coordenadaAux[5]);
             coordenadasConsultaDTO.setY((BigDecimal) coordenadaAux[6]);
-            coordenadasConsultaDTO.setMunicipio((String) coordenadaAux[7]);
-            coordenadasConsultaDTO.setNivel_subsiguiente((String) coordenadaAux[8]);
-            coordenadasConsultaDTO.setCota((BigDecimal) coordenadaAux[9]);
-            coordenadasConsultaDTO.setDescripcion((String) coordenadaAux[10]);
-            coordenadasConsultaDTO.setObservaciones((String) coordenadaAux[11]);
-            coordenadasConsultaDTO.setFecha_creacion((Date) coordenadaAux[12]);
-            coordenadasConsultaDTO.setCreado_por((String) coordenadaAux[13]);
+            coordenadasConsultaDTO.setX_nacional((BigDecimal)  coordenadaAux[7]);
+            coordenadasConsultaDTO.setY_nacional((BigDecimal) coordenadaAux[8]);
+            coordenadasConsultaDTO.setX_wgs84((BigDecimal) coordenadaAux[9]);
+            coordenadasConsultaDTO.setY_wgs84((BigDecimal) coordenadaAux[10]);
+            coordenadasConsultaDTO.setSec_municipio((BigDecimal) coordenadaAux[11]);
+            coordenadasConsultaDTO.setNombre_municipio((String) coordenadaAux[12]);
+            coordenadasConsultaDTO.setCota((BigDecimal) coordenadaAux[13]);
+            coordenadasConsultaDTO.setCuenca_codigo((String) coordenadaAux[14]);
+            coordenadasConsultaDTO.setNombre_cuenca((String) coordenadaAux[15]);
+            coordenadasConsultaDTO.setNombre_fuente((String) coordenadaAux[16]);
+            coordenadasConsultaDTO.setDescripcion((String) coordenadaAux[17]);
+            coordenadasConsultaDTO.setObservaciones((String) coordenadaAux[18]);
+            coordenadasConsultaDTO.setFecha_creacion((Date) coordenadaAux[19]);
+            coordenadasConsultaDTO.setCreado_por((String) coordenadaAux[20]);
+
+
 
             coordenadas.add(coordenadasConsultaDTO);
         }

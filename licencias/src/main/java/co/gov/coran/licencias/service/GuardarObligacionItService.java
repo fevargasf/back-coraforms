@@ -4,5 +4,5 @@ import co.gov.coran.licencias.models.dto.GuardarObligacionItDTO;
 
 public interface GuardarObligacionItService {
 
-  String  guardarObigaIt(GuardarObligacionItDTO guardarObligacionItDTO);
+  GuardarObligacionItDTO guardarObigaIt(GuardarObligacionItDTO guardarObligacionItDTO);
 }

@@ -4,5 +4,5 @@ import co.gov.coran.licencias.models.dto.GuardarFirmaDTO;
 
 public interface GuardarFirmaService {
 
-    String guardarFirma(GuardarFirmaDTO guardarFirmaDTO);
+    GuardarFirmaDTO guardarFirma(GuardarFirmaDTO guardarFirmaDTO);
 }

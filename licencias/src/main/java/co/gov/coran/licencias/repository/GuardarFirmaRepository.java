@@ -19,7 +19,7 @@ public class GuardarFirmaRepository {
     GuardarFirmaRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
-    public String guardarFirma(GuardarFirmaDTO guardarFirmaDTO) {
+    public GuardarFirmaDTO guardarFirma(GuardarFirmaDTO guardarFirmaDTO) {
         String voerror = null;
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(GUARDAR_FIRMA);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
@@ -41,10 +41,10 @@ public class GuardarFirmaRepository {
 
         System.out.println(voError);
 
-
+        guardarFirmaDTO.setVoError(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
         entityManager.close();
 
-        return String.valueOf(voError);
+        return guardarFirmaDTO;
 
 
     }

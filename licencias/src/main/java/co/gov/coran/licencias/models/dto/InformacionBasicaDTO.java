@@ -26,6 +26,7 @@ public class InformacionBasicaDTO {
     private String  trasporte_visita;
     private String acompagnantes_visita;
     private String es_autogestion;
+    private String agregar_coordenadas_cs;
 
     public String getNombre_asunto() {
         return nombre_asunto;
@@ -178,5 +179,13 @@ public class InformacionBasicaDTO {
 
     public void setEs_autogestion(String es_autogestion) {
         this.es_autogestion = es_autogestion;
+    }
+
+    public String getAgregar_coordenadas_cs() {
+        return agregar_coordenadas_cs;
+    }
+
+    public void setAgregar_coordenadas_cs(String agregar_coordenadas_cs) {
+        this.agregar_coordenadas_cs = agregar_coordenadas_cs;
     }
 }

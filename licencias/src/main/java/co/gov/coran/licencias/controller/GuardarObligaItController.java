@@ -4,11 +4,8 @@ package co.gov.coran.licencias.controller;
 import co.gov.coran.licencias.models.dto.GuardarObligacionItDTO;
 import co.gov.coran.licencias.service.GuardarObligacionItService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.math.BigDecimal;
 
 @RestController
 public class GuardarObligaItController {
@@ -19,7 +16,7 @@ public class GuardarObligaItController {
     @PostMapping(value ="/guardar_ObligacionIt")
     @ResponseStatus(HttpStatus.OK)
     public  @ResponseBody
-    String guardarObigaIt(@RequestParam(name = "niSecEEta") String niSecEEta,
+    GuardarObligacionItDTO guardarObigaIt(@RequestParam(name = "niSecEEta") String niSecEEta,
                           @RequestParam(name = "nioLinea") String nioLinea,
                           @RequestParam(name = "niSecDoc") String niSecDoc,
                           @RequestParam(value="niSecTer") String niSecTer,

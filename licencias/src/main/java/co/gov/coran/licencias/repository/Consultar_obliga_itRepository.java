@@ -1,6 +1,5 @@
 package co.gov.coran.licencias.repository;
 
-import co.gov.coran.licencias.models.dto.EditarCoordenadasDTO;
 import co.gov.coran.licencias.models.dto.GuardarObligacionItDTO;
 import org.springframework.stereotype.Repository;
 
@@ -37,7 +36,7 @@ public class Consultar_obliga_itRepository {
     }
 
 
-    public String guardarObigaIt(GuardarObligacionItDTO guardarObligacionItDTO){
+    public GuardarObligacionItDTO guardarObigaIt(GuardarObligacionItDTO guardarObligacionItDTO){
         String voerror = null;
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(GUARDAR_OBLIGACIONES_IT);
 
@@ -72,9 +71,9 @@ public class Consultar_obliga_itRepository {
 
         System.out.println(voError);
 
-
+        guardarObligacionItDTO.setVoError(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
         entityManager.close();
 
-        return String.valueOf(voError);
+        return guardarObligacionItDTO;
     }
 }

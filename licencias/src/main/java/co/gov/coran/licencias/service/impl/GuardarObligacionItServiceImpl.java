@@ -12,7 +12,7 @@ public class GuardarObligacionItServiceImpl implements GuardarObligacionItServic
     private Consultar_obliga_itRepository consultar_obliga_itRepository;
 
     @Override
-    public String guardarObigaIt(GuardarObligacionItDTO guardarObligacionItDTO) {
+    public GuardarObligacionItDTO guardarObigaIt(GuardarObligacionItDTO guardarObligacionItDTO) {
         return consultar_obliga_itRepository.guardarObigaIt(guardarObligacionItDTO);
     }
 }

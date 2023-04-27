@@ -27,4 +27,10 @@ public class ConsultaFirmantesController {
     ListaFirmantes listaFirmantes(@RequestParam(name="niSecEETA") BigDecimal niSecEETA){
         return consultaFirmanteService.listaFirmantes(niSecEETA);
     }
+    @GetMapping("/firma_unico")
+    @ResponseStatus(HttpStatus.OK)
+    public  @ResponseBody
+    ListaFirmantes listaFirmante(@RequestParam(name="viIdUsuario") String viIdUsuario){
+        return consultaFirmanteService.listaFirmante(viIdUsuario);
+    }
 }

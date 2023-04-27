@@ -6,9 +6,9 @@ public class EditarCoordenadasDTO {
 
     public BigDecimal niSecEEta;
     public String viUsuario;
-    public Integer  niLinea;
-    public BigDecimal niSecCaptacion;
-    public  BigDecimal niSecVertimiento;
+    public String  niLinea;
+    public String niSecCaptacion;
+    public  String niSecVertimiento;
     public  BigDecimal niSistemaCoorde;
     public BigDecimal niX;
     public BigDecimal niY;
@@ -34,27 +34,27 @@ public class EditarCoordenadasDTO {
         this.viUsuario = viUsuario;
     }
 
-    public Integer getNiLinea() {
+    public String getNiLinea() {
         return niLinea;
     }
 
-    public void setNiLinea(Integer niLinea) {
+    public void setNiLinea(String niLinea) {
         this.niLinea = niLinea;
     }
 
-    public BigDecimal getNiSecCaptacion() {
+    public String getNiSecCaptacion() {
         return niSecCaptacion;
     }
 
-    public void setNiSecCaptacion(BigDecimal niSecCaptacion) {
+    public void setNiSecCaptacion(String niSecCaptacion) {
         this.niSecCaptacion = niSecCaptacion;
     }
 
-    public BigDecimal getNiSecVertimiento() {
+    public String getNiSecVertimiento() {
         return niSecVertimiento;
     }
 
-    public void setNiSecVertimiento(BigDecimal niSecVertimiento) {
+    public void setNiSecVertimiento(String niSecVertimiento) {
         this.niSecVertimiento = niSecVertimiento;
     }
 

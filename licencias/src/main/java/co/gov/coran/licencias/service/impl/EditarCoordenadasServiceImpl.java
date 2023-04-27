@@ -13,7 +13,7 @@ public class EditarCoordenadasServiceImpl implements EditarCoordenadasService {
     @Autowired
     private GuardarCoordenadasRepository guardarCoordenadasRepository;
     @Override
-    public String guardarCoord(EditarCoordenadasDTO editarCoordenadasDTO) {
+    public EditarCoordenadasDTO guardarCoord(EditarCoordenadasDTO editarCoordenadasDTO) {
         return guardarCoordenadasRepository.guardarCoord(editarCoordenadasDTO);
     }
 }

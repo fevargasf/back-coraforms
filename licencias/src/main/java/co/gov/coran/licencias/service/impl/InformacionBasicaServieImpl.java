@@ -47,6 +47,7 @@ public class InformacionBasicaServieImpl implements InformacionBasicaService {
         dto.setTrasporte_visita((String) value[16]);
         dto.setAcompagnantes_visita((String) value[17]);
         dto.setEs_autogestion(String.valueOf(value[18]));
+        dto.setAgregar_coordenadas_cs(String.valueOf(value[19]));
 
         return dto;
     }).findFirst().get();

@@ -9,6 +9,7 @@ public class GuardarFirmaDTO {
     private BigDecimal  niHoras;
     private BigDecimal niMins;
     private Blob bliFirma;
+    private String voError;
 
     public BigDecimal getNiSecEETA() {
         return niSecEETA;
@@ -48,5 +49,13 @@ public class GuardarFirmaDTO {
 
     public void setBliFirma(Blob bliFirma) {
         this.bliFirma = bliFirma;
+    }
+
+    public String getVoError() {
+        return voError;
+    }
+
+    public void setVoError(String voError) {
+        this.voError = voError;
     }
 }

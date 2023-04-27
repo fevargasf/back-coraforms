@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.SQLException;
 
 @RestController
 public class EditarCoordenadasController {
@@ -19,12 +17,12 @@ public class EditarCoordenadasController {
     @PostMapping(value ="/editar_coordenada")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
-    String guardarCoord(
+    EditarCoordenadasDTO guardarCoord(
             @RequestParam(value = "niSecEEta") BigDecimal niSecEEta,
-            @RequestParam(value = "niLinea") Integer niLinea,
-            @RequestParam(value = "viIdUsuario") String viIdUsuario,
-            @RequestParam(value = "niSecCaptacion") BigDecimal niSecCaptacion,
-            @RequestParam(value = "niSecVertimiento") BigDecimal niSecVertimiento,
+            @RequestParam(value = "niLinea") String niLinea,
+            @RequestParam(value = "viUsuario") String viUsuario,
+            @RequestParam(value = "niSecCaptacion") String niSecCaptacion,
+            @RequestParam(value = "niSecVertimiento") String niSecVertimiento,
             @RequestParam(value = "niSistemaCoorde") BigDecimal niSistemaCoorde,
             @RequestParam(value = "niX") BigDecimal niX,
             @RequestParam(value = "niY") BigDecimal niY,
@@ -35,10 +33,10 @@ public class EditarCoordenadasController {
         EditarCoordenadasDTO editarCoordenadasDTO = new EditarCoordenadasDTO();
         editarCoordenadasDTO.setNiSecEEta(niSecEEta);
         editarCoordenadasDTO.setNiLinea(niLinea);
-        editarCoordenadasDTO.setViUsuario(viIdUsuario);
+        editarCoordenadasDTO.setViUsuario(viUsuario);
         editarCoordenadasDTO.setNiSecCaptacion(niSecCaptacion);
-        editarCoordenadasDTO.setNiSistemaCoorde(niSistemaCoorde);
         editarCoordenadasDTO.setNiSecVertimiento(niSecVertimiento);
+        editarCoordenadasDTO.setNiSistemaCoorde(niSistemaCoorde);
         editarCoordenadasDTO.setNiX(niX);
         editarCoordenadasDTO.setNiY(niY);
         editarCoordenadasDTO.setViTipoCoorde(viTipoCoorde);

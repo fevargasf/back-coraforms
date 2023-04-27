@@ -19,15 +19,15 @@ public class GuardarCoordenadasRepository {
         this.entityManager = entityManager;
     }
 
-    public String guardarCoord(EditarCoordenadasDTO editarCoordenadasDTO){
+    public EditarCoordenadasDTO guardarCoord(EditarCoordenadasDTO editarCoordenadasDTO){
         String voerror = null;
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(GUARDAR_COORDENADAS);
 
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("niLinea", Integer.class, ParameterMode.INOUT);
-        storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("niSecCaptacion", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("niSecVertimiento", BigDecimal.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("niLinea", String.class, ParameterMode.INOUT);
+        storedProcedureQuery.registerStoredProcedureParameter("viUsuario", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("niSecCaptacion", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("niSecVertimiento", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("niSistemaCoorde", BigDecimal.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("niX", BigDecimal.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("niY", BigDecimal.class, ParameterMode.IN);
@@ -38,7 +38,7 @@ public class GuardarCoordenadasRepository {
 
         storedProcedureQuery.setParameter("niSecEEta",editarCoordenadasDTO.getNiSecEEta());
         storedProcedureQuery.setParameter("niLinea",editarCoordenadasDTO.getNiLinea());
-        storedProcedureQuery.setParameter("viIdUsuario",editarCoordenadasDTO.getViUsuario());
+        storedProcedureQuery.setParameter("viUsuario",editarCoordenadasDTO.getViUsuario());
         storedProcedureQuery.setParameter("niSecCaptacion",editarCoordenadasDTO.getNiSecCaptacion());
         storedProcedureQuery.setParameter("niSecVertimiento",editarCoordenadasDTO.getNiSecVertimiento());
         storedProcedureQuery.setParameter("niSistemaCoorde",editarCoordenadasDTO.getNiSistemaCoorde());
@@ -53,9 +53,9 @@ public class GuardarCoordenadasRepository {
 
         System.out.println(voError);
 
-
+        editarCoordenadasDTO.setVoError(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
         entityManager.close();
 
-        return String.valueOf(voError);
+        return editarCoordenadasDTO;
     }
 }

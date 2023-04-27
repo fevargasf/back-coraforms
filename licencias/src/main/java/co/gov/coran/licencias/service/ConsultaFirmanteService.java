@@ -9,5 +9,5 @@ import java.util.List;
 public interface ConsultaFirmanteService {
 
  ListaFirmantes listaFirmantes(BigDecimal niSecEETA);
-
+ ListaFirmantes listaFirmante(String viIdUsuario);
 }

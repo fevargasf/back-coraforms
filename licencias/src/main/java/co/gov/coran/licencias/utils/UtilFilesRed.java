@@ -15,7 +15,7 @@ import java.util.List;
 
 public class UtilFilesRed {
 
-    public static String rootDir = "DocLicenciasAmbientalesyTE/";
+    public static String rootDir = "docunet/";
     public static String separator = "/";
 
     public static byte[] testFileGMD(String fichero) throws Exception {
@@ -174,41 +174,6 @@ public class UtilFilesRed {
         }
     }
 
-   /* private boolean create(String fichero, String name) throws Exception {
-        SmbFile archivo = null;
 
-        UnidadRed ur = new UnidadRed();
-        archivo = new SmbFile(ur.apuntarPath("AUTOGESTOR_") + fichero,ur.autenticar());
-        boolean success = true;
-        Boolean isDirectory = fichero.isDirectory();
-        boolean createParents = Boolean.TRUE.equals(params.isMakeParents());
-        Date lastModified = params.getLastModified();
-        if (!file.exists()) {
-            boolean createDirectory = Boolean.TRUE.equals(isDirectory);
-            if (createDirectory && createParents) {
-                file.mkdirs(); // directory and parents
-            } else if (createDirectory) {
-                file.mkdir(); // directory
-            } else { // file
-                if (createParents) {
-                    mkParentDirs(file);
-                }
-                file.createNewFile();
-            }
-            if (lastModified != null) {
-                file.setLastModified(lastModified.getTime());
-            }
-        } else {
-            if ((isDirectory != null) && (!isDirectory.equals(file.isDirectory()))) {
-                throw new Exception(MessageFormat.format(isDirectory ? FileOperationMessages.getString("IOperationHandler.exists_not_directory") : FileOperationMessages.getString("IOperationHandler.exists_not_file"), file)); //$NON-NLS-1$ //$NON-NLS-2$
-            }
-            if (lastModified != null) {
-                file.setLastModified(lastModified.getTime());
-            } else {
-                file.setLastModified(System.currentTimeMillis());
-            }
-        }
-        return success;
-    }*/
 
 }

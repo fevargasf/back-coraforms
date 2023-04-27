@@ -15,6 +15,8 @@ public class GuardarObligacionItDTO {
     private String  viObs;
     private String  viMotivoParcial;
     private String  viIdUsuario;
+    private String voError;
+
 
     public String getNiSecEEta() {
         return niSecEEta;
@@ -102,5 +104,13 @@ public class GuardarObligacionItDTO {
 
     public void setViIdUsuario(String viIdUsuario) {
         this.viIdUsuario = viIdUsuario;
+    }
+
+    public String getVoError() {
+        return voError;
+    }
+
+    public void setVoError(String voError) {
+        this.voError = voError;
     }
 }

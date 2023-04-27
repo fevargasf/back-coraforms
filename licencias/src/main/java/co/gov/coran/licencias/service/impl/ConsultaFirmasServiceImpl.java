@@ -58,6 +58,36 @@ public class ConsultaFirmasServiceImpl implements ConsultaFirmanteService {
         return listaFirmantes;
     }
 
+
+    public ListaFirmantes listaFirmante(String viIdUsuario) {
+        ListaFirmantes listaFirmantes = new ListaFirmantes();
+        List<Object> objects = ConsultarFirmaRepository.listaFirmante(viIdUsuario);
+        List<ListaFirmantesDTO> firmas = new ArrayList<>();
+
+        for (Object firma : objects){
+            listaFirmantes.setResult(Boolean.TRUE);
+            Object[] firmaAux =(Object[]) firma;
+
+            ListaFirmantesDTO listaFirmantesDTO = new ListaFirmantesDTO();
+
+            listaFirmantesDTO.setSec((BigDecimal) firmaAux[1]);
+            listaFirmantesDTO.setDocumento((String) firmaAux[2]);
+            listaFirmantesDTO.setNombre((String) firmaAux[0]);
+            listaFirmantesDTO.setCargo((String) firmaAux[3]);
+
+            try{
+                Blob blob = new SerialBlob( (Blob) firmaAux[4] );
+                listaFirmantesDTO.setFirma(blob);
+            }catch (Exception e){}
+
+
+
+            firmas.add(listaFirmantesDTO);
+        }
+        listaFirmantes.setLista_firmas(firmas);
+        return listaFirmantes;
+    }
+
     private static byte[] serialize(Object object) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);

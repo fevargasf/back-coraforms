@@ -4,27 +4,33 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class CoordenadasConsultaDTO {
-    private Integer linea;
+    private BigDecimal linea;
     private BigDecimal capta_sec;
     private BigDecimal vert_sec;
     private BigDecimal sistema_coordenadas;
     private String nombre_sistema_coordenadas;
     private BigDecimal x;
     private BigDecimal Y;
-    private String municipio;
-    private String nivel_subsiguiente;
+    private BigDecimal x_nacional;
+    private BigDecimal y_nacional;
+    private BigDecimal x_wgs84;
+    private BigDecimal y_wgs84;
+    private BigDecimal sec_municipio;
+    private String nombre_municipio;
     private BigDecimal cota;
+    private String cuenca_codigo;
+    private String nombre_cuenca;
+    private String nombre_fuente;
     private String descripcion;
-    private String Observaciones;
+    private String observaciones;
     private Date Fecha_creacion;
     private String creado_por;
 
-
-    public Integer getLinea() {
+    public BigDecimal getLinea() {
         return linea;
     }
 
-    public void setLinea(Integer linea) {
+    public void setLinea(BigDecimal linea) {
         this.linea = linea;
     }
 
@@ -76,20 +82,52 @@ public class CoordenadasConsultaDTO {
         Y = y;
     }
 
-    public String getMunicipio() {
-        return municipio;
+    public BigDecimal getX_nacional() {
+        return x_nacional;
     }
 
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
+    public void setX_nacional(BigDecimal x_nacional) {
+        this.x_nacional = x_nacional;
     }
 
-    public String getNivel_subsiguiente() {
-        return nivel_subsiguiente;
+    public BigDecimal getY_nacional() {
+        return y_nacional;
     }
 
-    public void setNivel_subsiguiente(String nivel_subsiguiente) {
-        this.nivel_subsiguiente = nivel_subsiguiente;
+    public void setY_nacional(BigDecimal y_nacional) {
+        this.y_nacional = y_nacional;
+    }
+
+    public BigDecimal getX_wgs84() {
+        return x_wgs84;
+    }
+
+    public void setX_wgs84(BigDecimal x_wgs84) {
+        this.x_wgs84 = x_wgs84;
+    }
+
+    public BigDecimal getY_wgs84() {
+        return y_wgs84;
+    }
+
+    public void setY_wgs84(BigDecimal y_wgs84) {
+        this.y_wgs84 = y_wgs84;
+    }
+
+    public BigDecimal getSec_municipio() {
+        return sec_municipio;
+    }
+
+    public void setSec_municipio(BigDecimal sec_municipio) {
+        this.sec_municipio = sec_municipio;
+    }
+
+    public String getNombre_municipio() {
+        return nombre_municipio;
+    }
+
+    public void setNombre_municipio(String nombre_municipio) {
+        this.nombre_municipio = nombre_municipio;
     }
 
     public BigDecimal getCota() {
@@ -98,6 +136,30 @@ public class CoordenadasConsultaDTO {
 
     public void setCota(BigDecimal cota) {
         this.cota = cota;
+    }
+
+    public String getCuenca_codigo() {
+        return cuenca_codigo;
+    }
+
+    public void setCuenca_codigo(String cuenca_codigo) {
+        this.cuenca_codigo = cuenca_codigo;
+    }
+
+    public String getNombre_cuenca() {
+        return nombre_cuenca;
+    }
+
+    public void setNombre_cuenca(String nombre_cuenca) {
+        this.nombre_cuenca = nombre_cuenca;
+    }
+
+    public String getNombre_fuente() {
+        return nombre_fuente;
+    }
+
+    public void setNombre_fuente(String nombre_fuente) {
+        this.nombre_fuente = nombre_fuente;
     }
 
     public String getDescripcion() {
@@ -109,11 +171,11 @@ public class CoordenadasConsultaDTO {
     }
 
     public String getObservaciones() {
-        return Observaciones;
+        return observaciones;
     }
 
     public void setObservaciones(String observaciones) {
-        Observaciones = observaciones;
+        this.observaciones = observaciones;
     }
 
     public Date getFecha_creacion() {

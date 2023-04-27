@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.sql.rowset.serial.SerialBlob;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.Blob;
 import java.sql.SQLException;
 
 @RestController
@@ -23,7 +22,7 @@ public class GuardarFirmaController {
     @PostMapping(value = "/guardar_firma")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
-    String guardarFirma(
+    GuardarFirmaDTO guardarFirma(
             @RequestParam(value = "niSecEEta") BigDecimal niSecEEta,
             @RequestParam(value = "viIdUsuario") String viIdUsuario,
             @RequestParam(value = "niHoras") BigDecimal niHoras,
